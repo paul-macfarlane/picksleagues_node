@@ -16,6 +16,7 @@ This document outlines the implementation and API integration plan for **Picks L
 ## 👤 Account Setup & Profile
 
 - After first sign-in, users enter:
+
   - Username (8–20 chars)
   - Profile Pic URL (optional)
   - First Name
@@ -33,6 +34,7 @@ This document outlines the implementation and API integration plan for **Picks L
   - Picks leagues the user is in
   - Invitations to join leagues
 - Actions:
+
   - Navigate to Create League / Join League
 
 - **Endpoints**:
@@ -42,6 +44,7 @@ This document outlines the implementation and API integration plan for **Picks L
 ## 🆕 Create League
 
 Fields:
+
 - Name (max 32 chars)
 - Logo URL (optional)
 - Sports League (NFL only)
@@ -59,6 +62,7 @@ Fields:
 
 - Filterable list of leagues
 - Can filter by:
+
   - League name
   - Sports league & season
   - Start/End week
@@ -151,20 +155,20 @@ Each league screen includes:
 
 ## Suggested API Structure
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| /auth/oauth/token | POST | Exchange code for JWT |
-| /users/setup | POST | Submit first-time user info |
-| /users/me | GET/PATCH | Get or update profile |
-| /users/me/leagues | GET | List user’s leagues |
-| /invites/pending | GET | List pending invites |
-| /leagues | GET/POST | Browse or create leagues |
-| /leagues/:id | GET/PATCH | League info and update |
-| /leagues/:id/members | GET | View members |
-| /leagues/:id/invites | POST | Invite users |
-| /leagues/:id/standings | GET | View standings |
-| /leagues/:id/weeks/:weekId/picks | GET/POST | View or submit picks |
-| /leagues/:id/seasons | POST | Start next season |
+| Endpoint                         | Method    | Description                 |
+| -------------------------------- | --------- | --------------------------- |
+| /auth/oauth/token                | POST      | Exchange code for JWT       |
+| /users/setup                     | POST      | Submit first-time user info |
+| /users/me                        | GET/PATCH | Get or update profile       |
+| /users/me/leagues                | GET       | List user’s leagues         |
+| /invites/pending                 | GET       | List pending invites        |
+| /leagues                         | GET/POST  | Browse or create leagues    |
+| /leagues/:id                     | GET/PATCH | League info and update      |
+| /leagues/:id/members             | GET       | View members                |
+| /leagues/:id/invites             | POST      | Invite users                |
+| /leagues/:id/standings           | GET       | View standings              |
+| /leagues/:id/weeks/:weekId/picks | GET/POST  | View or submit picks        |
+| /leagues/:id/seasons             | POST      | Start next season           |
 
 ---
 
