@@ -4,7 +4,7 @@
 
 - Node.js
 - npm
-- PostgreSQL database (local or remote)
+- Docker (for local PostgreSQL)
 
 ## Setup
 
@@ -25,7 +25,23 @@
 
    Copy `.env.example` to `.env` and fill in the required values:
 
-4. **Run the development server:**
+4. **Start the local PostgreSQL database:**
+
+   ```sh
+   docker compose up -d
+   ```
+
+   This will start a PostgreSQL 17 database on port 5433 with credentials as defined in `docker-compose.yml`.
+
+5. **Run database migrations:**
+
+   ```sh
+   npx drizzle-kit push:pg
+   ```
+
+   This will apply the latest schema changes to your local database.
+
+6. **Run the development server:**
 
    ```sh
    npm run dev
@@ -33,7 +49,7 @@
 
    The server will start on `http://localhost:3000` by default.
 
-5. **Build for production:**
+7. **Build for production:**
    ```sh
    npm run build
    npm start
@@ -43,6 +59,7 @@
 
 - `src/` — TypeScript source files
 - `.env` — Environment variables (not committed)
+- `drizzle/` — Drizzle migration files
 - `dist/` — Compiled JavaScript output
 
 ## Useful Commands
@@ -50,3 +67,16 @@
 - `npm run dev` — Start server with hot-reload (nodemon + ts-node)
 - `npm run build` — Compile TypeScript to JavaScript
 - `npm start` — Run compiled server
+- `npm run db:push` — Push schema to database)
+
+---
+
+## 🟦 Drizzle Studio
+
+You can use [Drizzle Studio](https://github.com/drizzle-team/drizzle-studio) for a visual interface to your database:
+
+```sh
+npm run db:studio
+```
+
+This will launch a local web UI to explore and manage your database schema and data.

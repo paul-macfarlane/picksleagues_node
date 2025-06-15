@@ -10,7 +10,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "db:studio": "drizzle-kit studio",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:migrate": "drizzle-kit migrate"
   },
   "keywords": [],
   "author": "",
@@ -26,9 +30,12 @@
     "zod": "^3.25.64"
   },
   "devDependencies": {
+    "@drizzle-team/studio": "^1.0.0",
     "@eslint/js": "^9.29.0",
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.1",
+    "@types/pg": "^8.15.4",
+    "drizzle-kit": "^0.31.1",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
     "globals": "^16.2.0",
