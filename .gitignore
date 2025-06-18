@@ -22,3 +22,6 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp 
+
+# google credentials
+google-credentials.json
